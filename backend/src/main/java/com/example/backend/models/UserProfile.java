@@ -4,26 +4,60 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
+// MongoDB document representing a user profile
 @Document(collection = "user_profiles")
 public class UserProfile {
+
+    // Unique identifier for the user profile
     @Id
     private String id;
+
+    // The ID of the user this profile belongs to
     private String userId;
+
+    // Short biography of the user
     private String bio;
+
+    // Profile picture URL or identifier
     private String profilePicture;
-    private String cookingExpertise; // beginner, intermediate, advanced, professional
-    private List<String> cookingInterests; // e.g., baking, vegan, international cuisine
+
+    // User's expertise level in cooking (e.g., beginner, intermediate, advanced, professional)
+    private String cookingExpertise;
+
+    // List of cooking interests (e.g., baking, vegan, international cuisine)
+    private List<String> cookingInterests;
+
+    // List of favorite cuisines (e.g., Italian, Mexican, Japanese)
     private List<String> favoriteCuisines;
+
+    // Number of recipes shared by the user
     private int recipesShared;
+
+    // Number of followers the user has
     private int followersCount;
+
+    // Number of people the user is following
     private int followingCount;
+
+    // Whether the user's profile is private (true) or public (false)
     private boolean isPrivate;
-    private List<String> dietaryPreferences; // e.g., vegetarian, vegan, gluten-free
+
+    // List of dietary preferences (e.g., vegetarian, vegan, gluten-free)
+    private List<String> dietaryPreferences;
+
+    // The user's location (could be city, country, etc.)
     private String location;
+
+    // The user's personal or business website
     private String website;
+
+    // List of social media profile links (e.g., Instagram, Twitter, Facebook)
     private List<String> socialMediaLinks;
 
+    // Default constructor for creating an empty UserProfile object
     public UserProfile() {}
+
+    // Getters and setters for each field
 
     public String getId() {
         return id;
