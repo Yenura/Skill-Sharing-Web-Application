@@ -38,7 +38,7 @@ public class UserConnection {
         return userId;
     }
 
-    // Setter for the user ID
+    // Setter for the user ID.
     public void setUserId(String userId) {
         this.userId = userId;
     }
