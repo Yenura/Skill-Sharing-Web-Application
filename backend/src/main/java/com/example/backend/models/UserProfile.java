@@ -57,7 +57,7 @@ public class UserProfile {
     // Default constructor for creating an empty UserProfile object
     public UserProfile() {}
 
-    // Getters and setters for each field
+    // Getters and setters for each field.
 
     public String getId() {
         return id;
