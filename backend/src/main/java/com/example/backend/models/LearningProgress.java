@@ -21,3 +21,4 @@ progress.setPublic(true);
 System.out.println("Learning Progress for: " + progress.getTitle());
 System.out.println("Current Milestone: " + progress.getCurrentMilestones().get(0));
 System.out.println("Progress: " + progress.getProgressPercentage() + "%");
+//..
