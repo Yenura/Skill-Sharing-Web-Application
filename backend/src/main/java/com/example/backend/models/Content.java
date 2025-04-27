@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Document(collection = "contents")
 public class Content {
 
-    // Unique identifier for each Content document.
+    // Unique identifier for each Content document..
     @Id
     private String id;
 
