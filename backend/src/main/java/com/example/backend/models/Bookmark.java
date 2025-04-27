@@ -104,7 +104,7 @@ public class Bookmark {
         return createdAt;
     }
 
-    // Setter method for the 'createdAt' field.
+    // Setter method for the 'createdAt' field..
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
