@@ -5,7 +5,7 @@ learningPlan.setSkillType("Data Science");
 learningPlan.setStartDate(LocalDateTime.now());
 learningPlan.setTargetEndDate(LocalDateTime.now().plusMonths(3));
 
-// Assuming LearningModule objects are already created
+// Assuming LearningModule objects are already created.
 List<LearningModule> modules = Arrays.asList(new LearningModule(), new LearningModule());
 learningPlan.setModules(modules);
 
