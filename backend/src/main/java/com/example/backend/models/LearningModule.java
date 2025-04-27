@@ -16,7 +16,7 @@ public class LearningModule {
     private List<String> prerequisites;
     private List<String> learningOutcomes;
 
-    // Getters and Setters
+    // Getters and Setters.
     public String getId() { 
         return id; 
     }
