@@ -27,7 +27,7 @@ public class MealRoutine {
         this.day = day;
     }
 
-    // Gets the list of meals for this day
+    // Gets the list of meals for this day.
     public List<Meal> getMeals() {
         return meals;
     }
