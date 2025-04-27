@@ -52,7 +52,7 @@ public class Like {
         return userId;
     }
 
-    // Setter method for the 'userId' field.
+    // Setter method for the 'userId' field..
     public void setUserId(String userId) {
         this.userId = userId;
     }

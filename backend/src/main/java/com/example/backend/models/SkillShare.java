@@ -47,7 +47,7 @@ public class SkillShare {
     // Date and time when the skill share was created
     private Date createdAt;
 
-    // Getters and Setters (Lombok generates these methods, but they are explicitly defined for clarity)
+    // Getters and Setters .(Lombok generates these methods, but they are explicitly defined for clarity)
     public String getId() {
         return id;
     }

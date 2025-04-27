@@ -111,7 +111,7 @@ public class User implements UserDetails {
         return enabled;
     }
 
-    // Getter and setter methods (auto-generated via Lombok, but included explicitly for clarity)
+    // Getter and setter methods. (auto-generated via Lombok, but included explicitly for clarity)
     public String getId() {
         return id;
     }

@@ -66,7 +66,7 @@ public class Meal {
         this.ingredients = ingredients;
     }
 
-    // Gets the instructions for the meal
+    // Gets the instructions for the meal.
     public String getInstructions() {
         return instructions;
     }

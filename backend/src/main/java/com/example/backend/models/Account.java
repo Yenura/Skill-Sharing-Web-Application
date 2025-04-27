@@ -28,7 +28,7 @@ public class Account {
     // The password for the account (usually stored encrypted in practice).
     private String password;
     
-    // The date when the account was created.
+    // The date when the account was created..
     @CreatedDate
     private LocalDate createdDate;
 }

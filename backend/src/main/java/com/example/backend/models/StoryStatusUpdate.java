@@ -37,7 +37,7 @@ public class StoryStatusUpdate {
     // Duration of the workout in minutes
     private int timeDuration;
 
-    // Intensity level of the workout (e.g., "Low", "Medium", "High")
+    // Intensity level of the workout .(e.g., "Low", "Medium", "High")
     private String intensity;
 
     // Getters and Setters (Lombok generates these methods, but they are explicitly defined for clarity)

@@ -39,7 +39,7 @@ public class SearchResult {
     // The timestamp when the content was created
     private LocalDateTime createdAt; 
     
-    // The timestamp when the content was last updated
+    // The timestamp when the content was last updated.
     private LocalDateTime updatedAt; 
     
     // A map containing highlighted snippets for specific fields (e.g., search terms)

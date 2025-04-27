@@ -53,7 +53,7 @@ public class SearchQuery {
         return filters != null ? type.cast(filters.get(key)) : null;
     }
     
-    // Method to add a filter to the filters map
+    // Method to add a filter to the filters map.
     public void addFilter(String key, Object value) {
         if (filters != null) {
             filters.put(key, value);

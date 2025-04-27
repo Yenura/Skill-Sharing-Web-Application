@@ -63,7 +63,7 @@ public class Group {
     // List of member IDs in the group
     private List<String> memberIds;
 
-    // Getter and Setter methods for each field
+    // Getter and Setter methods for each field.
 
     public String getId() {
         return id;

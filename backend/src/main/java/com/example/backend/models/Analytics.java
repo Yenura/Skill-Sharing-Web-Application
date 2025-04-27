@@ -122,7 +122,7 @@ public class Analytics {
         return metadata;
     }
 
-    // Setter method for the 'metadata' field.
+    // Setter method for the 'metadata' field..
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }

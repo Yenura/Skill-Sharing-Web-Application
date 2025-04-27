@@ -212,7 +212,7 @@ public class Recipe {
         this.commentsCount = commentsCount;
     }
 
-    // Gets whether the recipe is public or not
+    // Gets whether the recipe is public or not.
     public boolean isPublic() {
         return isPublic;
     }

@@ -75,7 +75,7 @@ public class Media {
         this.description = description;
     }
 
-    // Default constructor
+    // Default constructor.
     public Media() {}
 
     // Constructor to initialize all fields of the Media class
