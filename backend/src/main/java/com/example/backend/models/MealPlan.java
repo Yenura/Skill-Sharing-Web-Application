@@ -90,7 +90,7 @@ public class MealPlan {
         return routines;
     }
 
-    // Sets the list of meal routines for the meal plan
+    // Sets the list of meal routines for the meal plan.
     public void setRoutines(List<MealRoutine> routines) {
         this.routines = routines;
     }
