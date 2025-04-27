@@ -72,7 +72,7 @@ public class Comment {
         return timestamp;
     }
 
-    // Setter method for the 'timestamp' field.
+    // Setter method for the 'timestamp' field..
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
