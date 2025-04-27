@@ -41,7 +41,7 @@ public class Section {
     @NotNull(message = "Order index is required")
     private int orderIndex;
 
-    // Getters and Setters (Lombok generates these methods, but they are explicitly defined for clarity)
+    // Getters, and Setters (Lombok generates these methods, but they are explicitly defined for clarity)
     public String getId() {
         return id;
     }
