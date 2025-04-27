@@ -7,35 +7,61 @@ import lombok.AllArgsConstructor;
 import java.util.List;
 import java.util.Map;
 
+// Data annotation automatically generates getters, setters, toString, equals, and hashCode methods
 @Data
+// Builder pattern for creating instances with optional parameters
 @Builder
+// No arguments constructor for initializing the object with default values
 @NoArgsConstructor
+// All arguments constructor for initializing the object with all values
 @AllArgsConstructor
 public class SearchQuery {
-    private String query;           // Main search text
-    private List<String> types;     // Content types to search in
-    private List<String> tags;      // Tags to filter by
-    private String category;        // Category filter
-    private String creatorId;       // Filter by creator
-    private Map<String, Object> filters;  // Additional filters
-    private String sortBy;          // Field to sort by
-    private String sortOrder;       // "asc" or "desc"
-    private int page;              // Page number (0-based)
-    private int size;              // Page size
     
-    // Helper methods for filter manipulation
+    // The main search text that the user wants to search for
+    private String query; 
+    
+    // List of content types (e.g., "recipe", "post") to search in
+    private List<String> types; 
+    
+    // Tags to filter the search results
+    private List<String> tags; 
+    
+    // The category filter for narrowing down search results
+    private String category; 
+    
+    // The creator ID filter to search for content created by a specific user
+    private String creatorId; 
+    
+    // Additional filters that can be applied to the search query, stored as key-value pairs
+    private Map<String, Object> filters; 
+    
+    // The field by which the search results will be sorted
+    private String sortBy; 
+    
+    // The order of sorting, can be "asc" for ascending or "desc" for descending
+    private String sortOrder; 
+    
+    // The page number for paginated results (0-based index)
+    private int page; 
+    
+    // The number of results to return per page
+    private int size; 
+    
+    // Helper method to retrieve a filter value based on the key and type
     @SuppressWarnings("unchecked")
     public <T> T getFilter(String key, Class<T> type) {
         return filters != null ? type.cast(filters.get(key)) : null;
     }
     
+    // Method to add a filter to the filters map
     public void addFilter(String key, Object value) {
         if (filters != null) {
             filters.put(key, value);
         }
     }
     
+    // Method to check if a specific filter exists in the filters map
     public boolean hasFilter(String key) {
         return filters != null && filters.containsKey(key);
     }
-} 
+}

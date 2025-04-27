@@ -9,28 +9,39 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.util.List;
 
+// Lombok annotations to automatically generate getters, setters, toString, equals, and hashCode methods
 @Data
+// No-arguments constructor to initialize the object with default values
 @NoArgsConstructor
+// All-arguments constructor to initialize the object with all values
 @AllArgsConstructor
+// Indicates that this class will be mapped to a MongoDB collection "sections"
 @Document(collection = "sections")
 public class Section {
+
+    // Unique identifier for the section
     @Id
     private String id;
 
+    // Title of the section, cannot be blank
     @NotBlank(message = "Title is required")
     private String title;
 
+    // Description of the section (optional)
     private String description;
 
+    // Learning plan ID associated with this section, cannot be blank
     @NotBlank(message = "Learning plan ID is required")
     private String learningPlanId;
 
+    // List of content IDs related to this section (e.g., lessons, articles, etc.)
     private List<String> contentIds;
 
+    // The order of the section in the learning plan, cannot be null
     @NotNull(message = "Order index is required")
     private int orderIndex;
 
-    // Getters and Setters
+    // Getters and Setters (Lombok generates these methods, but they are explicitly defined for clarity)
     public String getId() {
         return id;
     }
@@ -78,4 +89,4 @@ public class Section {
     public void setContentIds(List<String> contentIds) {
         this.contentIds = contentIds;
     }
-} 
+}

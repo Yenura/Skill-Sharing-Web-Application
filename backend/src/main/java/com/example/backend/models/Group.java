@@ -6,31 +6,65 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 import java.util.List;
 
+// Represents a cooking community or group in the database
 @Document(collection = "cooking_communities")
 public class Group {
+
+    // Unique identifier for each group
     @Id
     private String id;
+
+    // Name of the cooking group
     private String name;
+
+    // Description of the cooking group
     private String description;
+
+    // URL or path to the group's cover image
     private String coverImage;
-    private String category; // e.g., baking, vegan, international cuisine
-    private String difficultyLevel; // beginner, intermediate, advanced
+
+    // Category of the group (e.g., baking, vegan, international cuisine)
+    private String category;
+
+    // Difficulty level of the group's content (e.g., beginner, intermediate, advanced)
+    private String difficultyLevel;
+
+    // List of tags associated with the group (e.g., easy, healthy, dessert)
     private List<String> tags;
+
+    // The time when the group was created
     private LocalDateTime createdAt;
+
+    // The time when the group was last updated
     private LocalDateTime updatedAt;
-    
+
+    // User who created the group (DBRef is used for references to other collections)
     @DBRef
     private User createdBy;
-    
+
+    // Count of members currently in the group
     private int memberCount;
+
+    // Count of recipes available in the group
     private int recipeCount;
+
+    // Whether the group is private or public
     private boolean isPrivate;
+
+    // List of rules for the group
     private List<String> rules;
+
+    // Custom message shown when someone requests to join the group
     private String joinRequestMessage;
+
+    // List of moderators in the group
     private List<String> moderators;
+
+    // List of member IDs in the group
     private List<String> memberIds;
 
-    // Getters and Setters
+    // Getter and Setter methods for each field
+
     public String getId() {
         return id;
     }
