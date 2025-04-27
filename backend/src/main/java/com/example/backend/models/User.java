@@ -22,72 +22,96 @@ import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.Setter;
 
+// MongoDB document representing users in the "users" collection
+@Document(collection = "users")
+// Lombok annotations to auto-generate getters, setters, constructors, etc.
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "users")
 @Getter
 @Setter
 public class User implements UserDetails {
+
+    // Unique identifier for the user (MongoDB ID)
     @Id
     private String id;
 
+    // Username with validation for length and uniqueness (indexed in MongoDB)
     @NotBlank(message = "Username is required")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
-    @Indexed(unique = true)
+    @Indexed(unique = true)  // Ensure username uniqueness in MongoDB
     private String username;
 
+    // User's email with validation for proper format and uniqueness
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
-    @Indexed(unique = true)
+    @Indexed(unique = true)  // Ensure email uniqueness in MongoDB
     private String email;
 
+    // User's password (typically hashed and stored securely)
     @NotBlank(message = "Password is required")
     private String password;
 
+    // Token for password reset functionality
     private String resetToken;
+
+    // Expiry time for the password reset token
     private LocalDateTime resetTokenExpiry;
+
+    // Set of roles assigned to the user (e.g., "ADMIN", "USER")
     private Set<String> roles = new HashSet<>();
+
+    // Flag indicating whether the user account is enabled or disabled
     private boolean enabled = true;
 
+    // Timestamp when the user account was created
     @CreatedDate
     private LocalDateTime createdAt;
 
+    // Timestamp for the last modification made to the user account
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    // Implementation of UserDetails interface: Authorities (roles) of the user
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Convert roles to GrantedAuthority objects prefixed with "ROLE_"
         return roles.stream()
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                 .collect(Collectors.toList());
     }
 
+    // Getter for username (from UserDetails interface)
     @Override
     public String getUsername() {
         return username;
     }
 
+    // User account is not expired by default
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    // User account is not locked by default
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    // Credentials (password) are not expired by default
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    // Account is enabled by default
     @Override
     public boolean isEnabled() {
         return enabled;
     }
 
+    // Getter and setter methods (auto-generated via Lombok, but included explicitly for clarity)
     public String getId() {
         return id;
     }
