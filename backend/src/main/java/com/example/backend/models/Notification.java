@@ -88,7 +88,7 @@ public class Notification {
         this.timestamp = timestamp;
     }
 
-    // Gets whether the notification has been read
+    // Gets whether the notification has been read.
     public boolean isRead() {
         return read;
     }
