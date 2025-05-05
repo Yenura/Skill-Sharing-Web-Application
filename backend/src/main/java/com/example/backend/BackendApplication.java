@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableMongoRepositories
+@EnableMongoRepositories(basePackages = "com.example.backend.repositories")
 @EnableMongoAuditing
 public class BackendApplication {
 
@@ -39,4 +39,3 @@ public class BackendApplication {
         return new BCryptPasswordEncoder();
     }
 }
-

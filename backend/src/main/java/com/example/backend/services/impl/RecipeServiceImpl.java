@@ -4,7 +4,6 @@ import com.example.backend.models.Recipe;
 import com.example.backend.repositories.RecipeRepository;
 import com.example.backend.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,21 +30,21 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public List<Recipe> getRecipes(String cuisineType, String difficultyLevel, String cookingTime, List<String> tags) {
         if (cuisineType != null && difficultyLevel != null && cookingTime != null && tags != null) {
-            return recipeRepository.findByCuisineTypeAndDifficultyLevelAndCookingTimeAndTagsIn(
+            return recipeRepository.findByCuisineTypeAndDifficultyAndCookingTimeAndTagsIn(
                     cuisineType, difficultyLevel, cookingTime, tags);
         } else if (cuisineType != null && difficultyLevel != null && cookingTime != null) {
-            return recipeRepository.findByCuisineTypeAndDifficultyLevelAndCookingTime(
+            return recipeRepository.findByCuisineTypeAndDifficultyAndCookingTime(
                     cuisineType, difficultyLevel, cookingTime);
         } else if (cuisineType != null && difficultyLevel != null) {
-            return recipeRepository.findByCuisineTypeAndDifficultyLevel(cuisineType, difficultyLevel);
+            return recipeRepository.findByCuisineTypeAndDifficulty(cuisineType, difficultyLevel);
         } else if (cuisineType != null && cookingTime != null) {
             return recipeRepository.findByCuisineTypeAndCookingTime(cuisineType, cookingTime);
         } else if (difficultyLevel != null && cookingTime != null) {
-            return recipeRepository.findByDifficultyLevelAndCookingTime(difficultyLevel, cookingTime);
+            return recipeRepository.findByDifficultyAndCookingTime(difficultyLevel, cookingTime);
         } else if (cuisineType != null) {
             return recipeRepository.findByCuisineType(cuisineType);
         } else if (difficultyLevel != null) {
-            return recipeRepository.findByDifficultyLevel(difficultyLevel);
+            return recipeRepository.findByDifficulty(difficultyLevel);
         } else if (cookingTime != null) {
             return recipeRepository.findByCookingTime(cookingTime);
         } else if (tags != null) {
@@ -83,7 +82,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public List<Recipe> getTrendingRecipes() {
         // Get recipes sorted by likes count in descending order
-        return recipeRepository.findAll(Sort.by(Sort.Direction.DESC, "likesCount"));
+        return recipeRepository.findByOrderByLikesCountDesc();
     }
 
     @Override

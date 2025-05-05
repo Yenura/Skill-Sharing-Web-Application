@@ -1,129 +1,111 @@
 package com.example.backend.utils;
 
 import org.springframework.stereotype.Component;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Component
 public class SearchHighlighter {
-
+    private static final int CONTEXT_LENGTH = 50; // Characters before and after match
     private static final String HIGHLIGHT_START = "<mark>";
     private static final String HIGHLIGHT_END = "</mark>";
 
-    /**
-     * Highlights search terms in the given text
-     * @param text The original text
-     * @param searchTerm The search term to highlight
-     * @return Text with search terms wrapped in highlight tags
-     */
     public String highlightText(String text, String searchTerm) {
-        if (text == null || searchTerm == null || searchTerm.trim().isEmpty()) {
+        if (text == null || searchTerm == null || text.isEmpty() || searchTerm.isEmpty()) {
             return text;
         }
 
-        // Escape special regex characters in search term
-        String escapedTerm = Pattern.quote(searchTerm.trim());
-        
-        // Case insensitive replacement
-        String pattern = "(?i)(" + escapedTerm + ")";
-        return text.replaceAll(pattern, "<mark>$1</mark>");
-    }
-
-    /**
-     * Highlights search terms in object fields
-     * @param object The object containing text fields
-     * @param searchTerm The search term to highlight
-     * @return Map containing highlighted fields
-     */
-    public Map<String, Object> highlightObject(Object object, String searchTerm) {
-        Map<String, Object> highlighted = new HashMap<>();
-        
-        if (object == null) {
-            return highlighted;
-        }
-
-        // Use reflection to get object fields
-        for (java.lang.reflect.Field field : object.getClass().getDeclaredFields()) {
-            field.setAccessible(true);
-            try {
-                Object value = field.get(object);
-                if (value instanceof String) {
-                    highlighted.put(field.getName(), highlightText((String) value, searchTerm));
-                } else {
-                    highlighted.put(field.getName(), value);
-                }
-            } catch (IllegalAccessException e) {
-                highlighted.put(field.getName(), null);
-            }
-        }
-
-        return highlighted;
-    }
-
-    public List<Object> highlightList(List<?> list, String searchTerm) {
-        List<Object> highlighted = new ArrayList<>();
-        
-        for (Object item : list) {
-            if (item instanceof String) {
-                highlighted.add(highlightText((String) item, searchTerm));
-            } else if (item instanceof Map) {
-                highlighted.add(highlightObject((Map<String, Object>) item, searchTerm));
-            } else if (item instanceof List) {
-                highlighted.add(highlightList((List<?>) item, searchTerm));
-            } else {
-                highlighted.add(item);
-            }
-        }
-        
-        return highlighted;
-    }
-
-    public String[] getHighlightedSnippets(String text, String searchTerm, int snippetLength, int maxSnippets) {
-        if (text == null || searchTerm == null || searchTerm.trim().isEmpty()) {
-            return new String[0];
-        }
-
-        Pattern pattern = Pattern.compile(
-            "(?i)(.{0," + snippetLength + "}\\b" + 
-            Pattern.quote(searchTerm.trim()) + 
-            "\\b.{0," + snippetLength + "})"
-        );
+        StringBuilder highlighted = new StringBuilder();
+        Pattern pattern = Pattern.compile(searchTerm, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
-        List<String> snippets = new ArrayList<>();
-        while (matcher.find() && snippets.size() < maxSnippets) {
-            String snippet = matcher.group(1);
-            snippet = snippet.trim();
-            if (snippet.length() > snippetLength * 2) {
-                snippet = "..." + snippet.substring(snippetLength) + "...";
-            } else if (!snippet.equals(text)) {
-                snippet = "..." + snippet + "...";
+        int lastIndex = 0;
+        while (matcher.find()) {
+            // Add text before match
+            highlighted.append(text.substring(lastIndex, matcher.start()));
+            // Add highlighted match
+            highlighted.append(HIGHLIGHT_START)
+                      .append(text.substring(matcher.start(), matcher.end()))
+                      .append(HIGHLIGHT_END);
+            lastIndex = matcher.end();
+        }
+        // Add remaining text
+        if (lastIndex < text.length()) {
+            highlighted.append(text.substring(lastIndex));
+        }
+
+        return highlighted.toString();
+    }
+
+    public List<String> extractMatchContexts(String text, String searchTerm) {
+        if (text == null || searchTerm == null || text.isEmpty() || searchTerm.isEmpty()) {
+            return List.of();
+        }
+
+        List<String> contexts = new ArrayList<>();
+        Pattern pattern = Pattern.compile(searchTerm, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(text);
+
+        while (matcher.find()) {
+            int start = Math.max(0, matcher.start() - CONTEXT_LENGTH);
+            int end = Math.min(text.length(), matcher.end() + CONTEXT_LENGTH);
+
+            String context = text.substring(start, end);
+            if (start > 0) {
+                context = "..." + context;
             }
-            snippets.add(highlightText(snippet, searchTerm));
+            if (end < text.length()) {
+                context = context + "...";
+            }
+
+            // Highlight the match within the context
+            String highlightedContext = context.substring(0, matcher.start() - start)
+                + HIGHLIGHT_START
+                + context.substring(matcher.start() - start, matcher.end() - start)
+                + HIGHLIGHT_END
+                + context.substring(matcher.end() - start);
+
+            contexts.add(highlightedContext);
         }
 
-        return snippets.toArray(new String[0]);
+        return contexts;
     }
 
-    /**
-     * Highlights multiple search terms in text
-     * @param text The original text
-     * @param searchTerms Array of search terms to highlight
-     * @return Text with all search terms highlighted
-     */
-    public String highlightMultipleTerms(String text, String[] searchTerms) {
-        if (text == null || searchTerms == null || searchTerms.length == 0) {
-            return text;
+    public double calculateMatchRelevance(String text, String searchTerm) {
+        if (text == null || searchTerm == null || text.isEmpty() || searchTerm.isEmpty()) {
+            return 0.0;
         }
 
-        String result = text;
+        Pattern pattern = Pattern.compile(searchTerm, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(text);
+
+        int matchCount = 0;
+        while (matcher.find()) {
+            matchCount++;
+        }
+
+        // Calculate relevance based on:
+        // 1. Number of matches
+        // 2. Match positions (earlier matches score higher)
+        // 3. Text length (shorter texts with same matches score higher)
+        double matchScore = matchCount * 100.0;
+        double lengthPenalty = Math.log10(text.length());
+        
+        return matchScore / lengthPenalty;
+    }
+
+    public List<String> highlightMultipleTerms(String text, List<String> searchTerms) {
+        if (text == null || searchTerms == null || text.isEmpty() || searchTerms.isEmpty()) {
+            return List.of();
+        }
+
+        List<String> contexts = new ArrayList<>();
         for (String term : searchTerms) {
-            result = highlightText(result, term);
+            contexts.addAll(extractMatchContexts(text, term));
         }
-        return result;
+
+        return contexts;
     }
-} 
+}

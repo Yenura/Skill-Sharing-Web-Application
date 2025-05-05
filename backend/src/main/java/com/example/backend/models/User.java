@@ -1,91 +1,101 @@
 package com.example.backend.models;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.index.Indexed;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import java.time.LocalDateTime;
-import java.util.Set;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import lombok.Setter;
+import com.example.backend.models.GroupPost;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Document(collection = "users")
 @Getter
 @Setter
+@Document(collection = "users")
 public class User implements UserDetails {
     @Id
     private String id;
 
-    @NotBlank(message = "Username is required")
-    @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
-    @Indexed(unique = true)
+    @Field("username")
     private String username;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Email should be valid")
-    @Indexed(unique = true)
+    @Field("email")
     private String email;
 
-    @NotBlank(message = "Password is required")
+    @Field("password")
     private String password;
 
-    private String resetToken;
-    private LocalDateTime resetTokenExpiry;
-    private Set<String> roles = new HashSet<>();
-    private boolean enabled = true;
+    @Field("profile_image")
+    private String profileImage;
 
-    @CreatedDate
+    @Field("bio")
+    private String bio;
+
+    @Field("following")
+    private Set<User> following = new HashSet<>();
+
+    @Field("followers")
+    private Set<User> followers = new HashSet<>();
+
+    @Field("posts")
+    private Set<GroupPost> posts = new HashSet<>();
+
+    @Field("saved_posts")
+    private List<String> savedPosts = new ArrayList<>();
+
+    @Field("created_at")
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
+    @Field("updated_at")
     private LocalDateTime updatedAt;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream()
-                .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
-                .collect(Collectors.toList());
+    @Field("enabled")
+    private boolean enabled;
+
+    @Field("name")
+    private String name;
+
+    @Field("provider")
+    private String provider;
+
+    @Field("reset_token")
+    private String resetToken;
+
+    @Field("reset_token_expiry")
+    private LocalDateTime resetTokenExpiry;
+
+    @Field("roles")
+    private Set<String> roles = new HashSet<>();
+
+    @Field("cooking_expertise")
+    private String cookingExpertise;
+
+    @Field("interests")
+    private List<String> interests = new ArrayList<>();
+
+    // Explicit getters and setters for key fields
+    public Set<User> getFollowing() {
+        return following;
     }
 
-    @Override
-    public String getUsername() {
-        return username;
+    public void setFollowing(Set<User> following) {
+        this.following = following;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
+    public Set<User> getFollowers() {
+        return followers;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
+    public void setFollowers(Set<User> followers) {
+        this.followers = followers;
     }
 
     public String getId() {
@@ -94,6 +104,15 @@ public class User implements UserDetails {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -113,28 +132,36 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public String getResetToken() {
-        return resetToken;
+    public String getProfileImage() {
+        return profileImage;
     }
 
-    public void setResetToken(String resetToken) {
-        this.resetToken = resetToken;
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
-    public LocalDateTime getResetTokenExpiry() {
-        return resetTokenExpiry;
+    public String getBio() {
+        return bio;
     }
 
-    public void setResetTokenExpiry(LocalDateTime resetTokenExpiry) {
-        this.resetTokenExpiry = resetTokenExpiry;
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
-    public Set<String> getRoles() {
-        return roles;
+    public Set<GroupPost> getPosts() {
+        return posts;
     }
 
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
+    public void setPosts(Set<GroupPost> posts) {
+        this.posts = posts;
+    }
+
+    public List<String> getSavedPosts() {
+        return savedPosts;
+    }
+
+    public void setSavedPosts(List<String> savedPosts) {
+        this.savedPosts = savedPosts;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -153,11 +180,80 @@ public class User implements UserDetails {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
+
+    public LocalDateTime getResetTokenExpiry() {
+        return resetTokenExpiry;
+    }
+
+    public void setResetTokenExpiry(LocalDateTime resetTokenExpiry) {
+        this.resetTokenExpiry = resetTokenExpiry;
+    }
+
+    public String getCookingExpertise() {
+        return cookingExpertise;
+    }
+
+    public void setCookingExpertise(String cookingExpertise) {
+        this.cookingExpertise = cookingExpertise;
+    }
+
+    public List<String> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<String> interests) {
+        this.interests = interests;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
 }

@@ -37,7 +37,7 @@ export default function RecipesPage() {
   const fetchRecipes = async () => {
     try {
       const response = await api.get('/recipes');
-      setRecipes(response.data);
+      setRecipes(response.data as Recipe[]);
     } catch (err) {
       setError('Failed to load recipes. Please try again later.');
     } finally {
@@ -48,7 +48,7 @@ export default function RecipesPage() {
   const fetchLikedRecipes = async () => {
     try {
       const response = await api.get('/users/me/liked-recipes');
-      setLikedRecipes(new Set(response.data.map((recipe: Recipe) => recipe.id)));
+      setLikedRecipes(new Set((response.data as Recipe[]).map((recipe) => recipe.id)));
     } catch (err) {
       console.error('Failed to fetch liked recipes:', err);
     }
@@ -71,7 +71,7 @@ export default function RecipesPage() {
       }
 
       const response = await api.get(`/recipes/search?${params.toString()}`);
-      setRecipes(response.data);
+      setRecipes(response.data as Recipe[]);
     } catch (err) {
       setError('Failed to search recipes. Please try again later.');
     } finally {

@@ -1,93 +1,151 @@
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\MealPlan.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\GroupRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Meal.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\JwtEncoder.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\StoryStatusUpdateController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Comment.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningPlan.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\OAuth2LoginSuccessHandler.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\TokenGenerator.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\ResourceNotFoundException.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Group.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LearningPlanController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\KeyUtils.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\AnalyticsController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\NotificationRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\GroupPostController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserProfile.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningProgress.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\EmailService.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\TextSearchRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\ErrorDetails.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Content.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchResult.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\ForgotPasswordDTO.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserConnectionRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\MediaRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\NotificationController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\MealPlanController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningModule.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\CommentController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\BookmarkController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\impl\TextSearchRepositoryImpl.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Notification.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\User.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\BackendApplication.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\SkillShareController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\RecipeRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LearningPlanRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\impl\RecipeServiceImpl.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\GroupPost.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserConnection.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LikeController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\AuthController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Recipe.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\utils\SearchHighlighter.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\GroupController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\ResetPasswordDTO.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\AnalyticsRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Bookmark.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\GroupPostRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\SecurityConfig.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\SignupDTO.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\SkillShareRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\SearchController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\TestController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\CommentRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\MongoConfig.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\SectionRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\ContentController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Account.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LearningProgressController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\MediaController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\JwtToUserConverter.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserConnectionController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\AnalyticsEvent.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\MongoUserDetailsManager.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\RecipeController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\BookmarkRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserProfileController.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Like.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Section.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\TokenDTO.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\StoryStatusUpdate.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\ContentRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserProfileRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\AnalyticsEventRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\StoryStatusUpdateRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\GlobalExceptionHandler.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\MealRoutine.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LikeRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\LoginDTO.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SkillShare.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Media.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LearningProgressRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\RecipeService.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\MealPlanRepository.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Analytics.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\CacheConfig.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchQuery.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\SearchService.java
-F:\3 Year\PAF\PAF Project\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\ContentService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\CacheCleanupConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\FeedService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\AdminController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\StoryStatusUpdate.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\GlobalExceptionHandler.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\MediaAssetService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\UserService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\TextSearchRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserConnectionRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\MealPlan.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Group.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\MediaAsset.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\aspects\RateLimitingAspect.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\MediaController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Notification.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\RecipeRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LearningPlanRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\utils\CDNUtils.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningModule.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserInteraction.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\CommentRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\HealthCheckController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LearningPlanController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\MealPlanController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\annotations\RateLimit.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\RecommendationService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\AnalyticsEvent.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\NotificationPreferenceController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\RedisConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\WebSocketConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\ForgotPasswordDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningPlan.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\NotificationController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\ErrorDetails.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\TestController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\CacheConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LikeRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchResult.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\NotificationRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\AuthController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\User.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\GroupRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\MealRoutine.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\LearningMilestoneService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Report.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\OAuth2LoginSuccessHandler.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchQuery.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\AnalyticsController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\WebSocketSecurityConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\LearningProgressDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\ContentService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\impl\RecipeServiceImpl.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\SearchService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\RateLimitingConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\LoginDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\MediaRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\EmailService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Bookmark.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\BookmarkRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\filters\RequestTrackingFilter.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningMilestone.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\utils\ValidationUtils.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\NotificationService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserProfile.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\api\FeedController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserConnection.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\CookingChallengeController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Account.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Like.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Recipe.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LearningProgressRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\UserActivity.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\ScheduledTasks.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\impl\NotificationServiceImpl.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\SearchTrendService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Section.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\security\JwtTokenUtil.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\SkillShareController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\TokenDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\AnalyticsEventRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\StoryStatusUpdateRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\GroupPostRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Meal.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\impl\TextSearchRepositoryImpl.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\SignupDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Media.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\MongoConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\AnalyticsRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\ErrorResponseDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\MealPlanRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\MongoUserDetailsManager.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\SecurityConfig.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\LearningMilestoneRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\ContentRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\SectionRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LearningMilestoneController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserProfileController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\LearningException.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserProfileRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\ReportRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\aspects\PerformanceMonitoringAspect.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\NotificationPreferenceRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\VideoProcessingService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\KeyUtils.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\security\UserPrincipal.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\MediaAssetController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\SearchException.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchTrend.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\JwtEncoder.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LikeController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\security\JwtTokenProvider.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\RecipeController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Content.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\RecipeService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\StoryStatusUpdateController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\dto\ResetPasswordDTO.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Analytics.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\listeners\WebSocketEventListener.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\SearchTrendRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\UserInteractionService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\TokenGenerator.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\GroupPostController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\NotificationPreference.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\UserDetailsServiceImpl.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\CookingChallengeService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\NotificationPreferenceService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\MediaAssetRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\config\JwtToUserConverter.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\SkillShareRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\UserInteractionRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\services\WebSocketService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\security\SocialAuthenticationService.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\LearningProgressController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningGoal.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SkillShare.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\CommentController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\UserConnectionController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\LearningProgress.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\repositories\CookingChallengeRepository.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\utils\SearchHighlighter.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\exception\ResourceNotFoundException.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\SearchCriteria.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\Comment.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\GroupController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\ContentController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\controllers\BookmarkController.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\BackendApplication.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\GroupPost.java
+F:\3 Year\PAF\PAF Project\New folder\Skill-Sharing-Web-Application\Skill-Sharing-Web-Application\backend\src\main\java\com\example\backend\models\CookingChallenge.java

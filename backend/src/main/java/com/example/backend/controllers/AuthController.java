@@ -19,8 +19,8 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -29,6 +29,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -57,14 +59,16 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody SignupDTO signupDTO) {
         try {
-            // Check if username already exists
-            if (userRepository.findByUsername(signupDTO.getUsername()) != null) {
+            // Check if email already exists
+            if (userRepository.findByEmail(signupDTO.getEmail()).isPresent()) { // Use Optional's isPresent()
                 return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(new ErrorDetails(new Date(), "Username already exists!", null));
+                    .body(new ErrorDetails(new Date(), "Email address already registered!", null)); // Updated error message
             }
 
+            // Username uniqueness is no longer checked here
+
             User user = new User();
-            user.setUsername(signupDTO.getUsername());
+            user.setUsername(signupDTO.getUsername()); // Still set the username
             user.setEmail(signupDTO.getEmail());
             user.setPassword(passwordEncoder.encode(signupDTO.getPassword()));
             user.setEnabled(true);
@@ -85,7 +89,7 @@ public class AuthController {
         try {
             Authentication authentication = daoAuthenticationProvider.authenticate(
                     UsernamePasswordAuthenticationToken.unauthenticated(
-                        loginDTO.getUsername(), 
+                        loginDTO.getEmail(),
                         loginDTO.getPassword()
                     )
             );
@@ -104,9 +108,10 @@ public class AuthController {
     public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordDTO forgotPasswordDTO) {
         try {
             String email = forgotPasswordDTO.getEmail();
-            User user = userRepository.findByEmail(email);
+            Optional<User> userOptional = userRepository.findByEmail(email);
             
-            if (user != null) {
+            if (userOptional.isPresent()) {
+                User user = userOptional.get();
                 String resetToken = UUID.randomUUID().toString();
                 user.setResetToken(resetToken);
                 user.setResetTokenExpiry(LocalDateTime.now().plusHours(1));
@@ -124,31 +129,29 @@ public class AuthController {
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordDTO resetPasswordDTO) {
-        try {
-            User user = userRepository.findByResetToken(resetPasswordDTO.getToken());
-            if (user == null) {
-                return ResponseEntity.badRequest()
-                    .body(new ErrorDetails(new Date(), "Invalid reset token", null));
-            }
-            
-            if (user.getResetTokenExpiry().isBefore(LocalDateTime.now())) {
-                return ResponseEntity.badRequest()
-                    .body(new ErrorDetails(new Date(), "Reset token has expired", null));
-            }
-            
-            user.setPassword(passwordEncoder.encode(resetPasswordDTO.getNewPassword()));
-            user.setResetToken(null);
-            user.setResetTokenExpiry(null);
-            userRepository.save(user);
-            
-            return ResponseEntity.ok()
-                .body(new ErrorDetails(new Date(), "Password successfully reset", null));
-        } catch (Exception ex) {
-            logger.error("Error in reset password:", ex);
-            return ResponseEntity.internalServerError()
-                .body(new ErrorDetails(new Date(), "Error processing request", ex.getMessage()));
+    public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> request) {
+        String token = request.get("token");
+        String newPassword = request.get("newPassword");
+        
+        if (token == null || newPassword == null) {
+            return ResponseEntity.badRequest().body("Token and new password are required");
         }
+        
+        User user = userRepository.findByResetToken(token);
+        if (user == null) {
+            return ResponseEntity.badRequest().body("Invalid token");
+        }
+        
+        if (user.getResetTokenExpiry().isBefore(LocalDateTime.now())) {
+            return ResponseEntity.badRequest().body("Token has expired");
+        }
+        
+        user.setPassword(passwordEncoder.encode(newPassword));
+        user.setResetToken(null);
+        user.setResetTokenExpiry(null);
+        userRepository.save(user);
+        
+        return ResponseEntity.ok("Password has been reset successfully");
     }
 
     @PostMapping("/validate-token")

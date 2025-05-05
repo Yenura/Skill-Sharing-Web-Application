@@ -1,73 +1,100 @@
 package com.example.backend.controllers;
 
 import com.example.backend.models.Notification;
-import com.example.backend.repositories.NotificationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import com.example.backend.services.NotificationService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/notifications")
+@CrossOrigin(origins = "http://localhost:3000")
 public class NotificationController {
 
-    private final NotificationRepository notificationRepository;
+    private final NotificationService notificationService;
 
-    @Autowired
-    public NotificationController(NotificationRepository notificationRepository) {
-        this.notificationRepository = notificationRepository;
-    }
-
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Notification>> getUserNotifications(@PathVariable String userId) {
-        List<Notification> notifications = notificationRepository.findByUserIdOrderByTimestampDesc(userId);
-        return new ResponseEntity<>(notifications, HttpStatus.OK);
-    }
-    
-    @GetMapping("/unread/{userId}")
-    public ResponseEntity<List<Notification>> getUnreadNotifications(@PathVariable String userId) {
-        List<Notification> notifications = notificationRepository.findByUserIdAndReadFalseOrderByTimestampDesc(userId);
-        return new ResponseEntity<>(notifications, HttpStatus.OK);
+    public NotificationController(NotificationService notificationService) {
+        this.notificationService = notificationService;
     }
 
-    @PostMapping
-    public ResponseEntity<Notification> createNotification(@RequestBody Notification notification) {
-        notification.setTimestamp(new Date());
-        notification.setRead(false);
-        Notification savedNotification = notificationRepository.save(notification);
-        return new ResponseEntity<>(savedNotification, HttpStatus.CREATED);
+    @GetMapping
+    public ResponseEntity<Page<Notification>> getUserNotifications(
+            Authentication authentication,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        String userId = authentication.getName();
+        Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
+        return ResponseEntity.ok(notificationService.getUserNotifications(userId, pageable));
     }
-    
-    @PutMapping("/{id}/read")
-    public ResponseEntity<Notification> markAsRead(@PathVariable String id) {
-        return notificationRepository.findById(id)
-                .map(notification -> {
-                    notification.setRead(true);
-                    return ResponseEntity.ok(notificationRepository.save(notification));
-                })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+
+    @GetMapping("/unread")
+    public ResponseEntity<List<Notification>> getUnreadNotifications(Authentication authentication) {
+        String userId = authentication.getName();
+        return ResponseEntity.ok(notificationService.getUnreadNotifications(userId));
     }
-    
-    @PutMapping("/read-all/{userId}")
-    public ResponseEntity<Void> markAllAsRead(@PathVariable String userId) {
-        List<Notification> notifications = notificationRepository.findByUserIdAndReadFalse(userId);
-        for (Notification notification : notifications) {
-            notification.setRead(true);
-            notificationRepository.save(notification);
-        }
+
+    @PostMapping("/{notificationId}/read")
+    public ResponseEntity<Void> markAsRead(@PathVariable String notificationId) {
+        notificationService.markAsRead(notificationId);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/read-all")
+    public ResponseEntity<Void> markAllAsRead(Authentication authentication) {
+        String userId = authentication.getName();
+        notificationService.markAllAsRead(userId);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/preferences")
+    public ResponseEntity<Map<String, Boolean>> getNotificationPreferences(Authentication authentication) {
+        // In a real implementation, this would fetch user-specific preferences
+        return ResponseEntity.ok(Map.of(
+            "recipe_likes", true,
+            "recipe_comments", true,
+            "follower_updates", true,
+            "learning_milestones", true,
+            "recommendations", true,
+            "skill_updates", true,
+            "trending_content", true,
+            "comment_replies", true
+        ));
+    }
+
+    @PutMapping("/preferences")
+    public ResponseEntity<Void> updateNotificationPreferences(
+            Authentication authentication,
+            @RequestBody Map<String, Boolean> preferences) {
+        // In a real implementation, this would update user-specific preferences
+        // notificationService.updateUserPreferences(userId, preferences);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Map<String, Long>> getUnreadCount(Authentication authentication) {
+        String userId = authentication.getName();
+        long count = notificationService.getUnreadNotifications(userId).size();
+        return ResponseEntity.ok(Map.of("count", count));
+    }
     
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNotification(@PathVariable String id) {
-        return notificationRepository.findById(id)
-                .map(notification -> {
-                    notificationRepository.delete(notification);
-                    return ResponseEntity.ok().<Void>build();
-                })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    @GetMapping("/types")
+    public ResponseEntity<List<String>> getNotificationTypes() {
+        return ResponseEntity.ok(List.of(
+            "RECIPE_LIKE", 
+            "RECIPE_COMMENT", 
+            "USER_FOLLOW", 
+            "COMMENT_REPLY", 
+            "LEARNING_MILESTONE", 
+            "RECOMMENDATION", 
+            "ACHIEVEMENT", 
+            "SYSTEM"
+        ));
     }
 }

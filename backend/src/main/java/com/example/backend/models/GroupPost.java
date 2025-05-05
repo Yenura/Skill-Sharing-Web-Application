@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Document(collection = "groupPosts")
 @Getter
@@ -18,7 +20,9 @@ public class GroupPost {
     private Date timestamp;
     private String mediaUrl;
     private String mediaType;
-    
+    private Set<String> likedBy = new HashSet<>();
+    private int likeCount = 0;
+
     public GroupPost() {
         this.timestamp = new Date();
     }
@@ -78,5 +82,21 @@ public class GroupPost {
 
     public void setMediaType(String mediaType) {
         this.mediaType = mediaType;
+    }
+
+    public Set<String> getLikedBy() {
+        return likedBy;
+    }
+
+    public void setLikedBy(Set<String> likedBy) {
+        this.likedBy = likedBy;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
     }
 }

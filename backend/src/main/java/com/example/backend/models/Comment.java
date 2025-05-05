@@ -1,72 +1,53 @@
 package com.example.backend.models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
+import lombok.Data;
 
-@Document(collection = "comments")
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
+@Document
 public class Comment {
     @Id
     private String id;
-    private String postId;
-    private String userId;
-    private String commentText;
-    private Date timestamp;
 
+    private String content;
 
+    private User author;
 
-    public Comment() {}
-
-    public String getId() {
-        return id;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
-    public String getPostId() {
-        return postId;
+    @DBRef
+    private Recipe post;
+
+    public Recipe getPost() {
+        return post;
     }
 
-    public void setPostId(String postId) {
-        this.postId = postId;
+    private Comment parent;
+
+    private List<Comment> replies = new ArrayList<>();
+
+    public String getContent() {
+        return content;
     }
 
-    public String getUserId() {
-        return userId;
-    }
+    @CreatedDate
+    private LocalDateTime createdAt;
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getCommentText() {
-        return commentText;
-    }
-
-    public void setCommentText(String commentText) {
-        this.commentText = commentText;
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public Comment(String id, String postId, String userId, String commentText, Date timestamp) {
-        this.id = id;
-        this.postId = postId;
-        this.userId = userId;
-        this.commentText = commentText;
-        this.timestamp = timestamp;
-    }
-
-
-
-
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 }
-

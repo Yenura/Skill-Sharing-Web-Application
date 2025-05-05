@@ -1,32 +1,31 @@
 package com.example.backend.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import java.time.LocalDateTime;
+import java.util.Map;
 
 @Document(collection = "notifications")
-@Getter
-@Setter
 public class Notification {
     @Id
     private String id;
+
     private String userId;
+
+    private String type;
+
     private String message;
-    private String type; // "like", "comment", "group_invite", etc.
-    private String sourceId; // ID of the related post, comment, group, etc.
-    private String sourceType; // "post", "comment", "group", etc.
-    private String actionUserId; // ID of the user who triggered the notification
-    private Date timestamp;
+
+    private Map<String, Object> data;
+
+    private LocalDateTime createdAt;
+
     private boolean read;
 
-    public Notification() {
-        this.timestamp = new Date();
-        this.read = false;
-    }
+    private LocalDateTime readAt;
 
     // Getters and Setters
+
     public String getId() {
         return id;
     }
@@ -43,6 +42,14 @@ public class Notification {
         this.userId = userId;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getMessage() {
         return message;
     }
@@ -51,12 +58,20 @@ public class Notification {
         this.message = message;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
+    public Map<String, Object> getData() {
+        return data;
     }
 
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public boolean isRead() {
@@ -65,5 +80,13 @@ public class Notification {
 
     public void setRead(boolean read) {
         this.read = read;
+    }
+
+    public LocalDateTime getReadAt() {
+        return readAt;
+    }
+
+    public void setReadAt(LocalDateTime readAt) {
+        this.readAt = readAt;
     }
 }
