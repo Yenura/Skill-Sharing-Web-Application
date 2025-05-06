@@ -1,0 +1,38 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://projectpaf:PAF123@cluster0.coesd5f.mongodb.net/paf-project?retryWrites=true&w=majority
+      database: paf-project
+  security:
+    jwt:
+      secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+      expiration: 86400000
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# File upload configuration
+spring.servlet.multipart:
+  max-file-size: 10MB
+  max-request-size: 10MB
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.skillsharing: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.data.mongodb: DEBUG
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
