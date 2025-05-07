@@ -119,13 +119,13 @@ const AboutSection = ({
       ) : (
         <>
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <p className="text-gray-700 leading-relaxed">{user.bio || 'No bio provided yet.'}</p>
+            <p className="text-gray-700 leading-relaxed">{user?.bio || 'No bio provided yet.'}</p>
           </div>
           <h3 className="text-md font-semibold text-ExtraDarkColor mb-2 flex items-center">
             <i className='fa fa-leaf mr-2'></i>Focus On
           </h3>
           <div className="flex flex-wrap gap-2">
-            {user.skills && user.skills.length > 0 ? (
+            {user?.skills && user.skills.length > 0 ? (
               user.skills.map((skill, index) => (
                 <span
                   key={index}
@@ -135,7 +135,7 @@ const AboutSection = ({
                 </span>
               ))
             ) : (
-              <p className="text-gray-500 text-sm">No added yet.</p>
+              <p className="text-gray-500 text-sm">No nutrients added yet.</p>
             )}
           </div>
         </>

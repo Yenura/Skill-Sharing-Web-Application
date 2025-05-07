@@ -39,8 +39,8 @@ const ProfileHeader = ({
           <div className="h-40 w-40 rounded-xl border-4 border-white shadow-xl overflow-hidden group relative">
             <img
               className="h-full w-full object-cover"
-              src={imagePreview || user.profilePicture || DefaultAvatar}
-              alt={user.username}
+              src={imagePreview || (user && user.profilePicture) || DefaultAvatar}
+              alt={user?.username || 'User'}
             />
             {isEditing && (
               <div
@@ -70,19 +70,19 @@ const ProfileHeader = ({
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center">
               <h1 className="text-3xl font-bold text-ExtraDarkColor mb-1 sm:mb-0">
-                {user.firstName && user.lastName
+                {user?.firstName && user?.lastName
                   ? `${user.firstName} ${user.lastName}`
-                  : user.firstName || user.lastName || user.username}
+                  : user?.firstName || user?.lastName || user?.username || 'User'}
               </h1>
               <span className="sm:ml-4 px-3 py-1 text-xs inline-flex items-center rounded-full bg-DarkColor text-white font-medium">
-                {user.role}
+                {user?.role || 'User'}
               </span>
             </div>
             <p className="text-gray-600 mt-1 text-sm flex items-center">
-              <i className='bx bx-user mr-1'></i> @{user.username}
+              <i className='bx bx-user mr-1'></i> @{user?.username || 'user'}
             </p>
             <p className="text-gray-600 mt-1 text-sm flex items-center">
-              <i className='bx bx-envelope mr-1'></i> {user.email}
+              <i className='bx bx-envelope mr-1'></i> {user?.email || 'email@example.com'}
             </p>
             <div className="mt-3 flex space-x-4">
               <button
